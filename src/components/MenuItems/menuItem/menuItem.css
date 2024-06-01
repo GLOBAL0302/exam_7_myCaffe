@@ -1,11 +1,29 @@
 button{
   background-color: goldenrod;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, font-weight  0.4s ease-in-out;
+  transition: color 0.4s ease-in-out,
+  background-color 0.4s ease-in-out,
+  font-weight  0.4s ease-in-out;
+  position: relative;
+  height: 150px;
 }
 
 button:hover{
   background: white;
   color: black;
   font-weight: bold;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, font-weight  0.4s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.4s ease-in-out, font-weight  0.4s ease-in-out;
 }
+
+button img{
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+}
+
+button:hover img{
+  transform: translateY(-10px);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+
