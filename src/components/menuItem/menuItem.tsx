@@ -1,5 +1,6 @@
 import {menuItemState} from '../../types.ts';
 import React from 'react';
+import "./menuItem.css"
 
 interface Props{
   menuItem:menuItemState

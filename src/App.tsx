@@ -2,8 +2,8 @@ import './App.css';
 import {hamburger, cheeseBurger, fries, coffee, tea, cola} from './constantItems.ts';
 import React from 'react';
 import {menuItemState} from './types.ts';
-import MenuItem from './components/menuItem/menuItem.tsx';
 import OrderDetails from './components/OrderDetails/OrderDetails.tsx';
+import MenuItems from './components/MenuItems/MenuItems.tsx';
 
 
 function App() {
@@ -51,15 +51,18 @@ function App() {
         <OrderDetails
           menuItems={menuItems}
           reduceMenuItem={reduceMenuItem}/>
-        <div className="addItemmSection d-flex w-50 flex-wrap">
-          {menuItems.map(item=>(
-            <MenuItem
-              key={Math.random().toString()}
-              menuItem={item}
-              addMenuItem={()=>addMenuItem(item)}
-            />
-          ))}
-        </div>
+        <MenuItems
+          menuItems={menuItems}
+          addMenuItem={addMenuItem}/>
+        {/*<div className="addItemmSection d-flex w-50 flex-wrap">*/}
+        {/*  {menuItems.map(item=>(*/}
+        {/*    <MenuItem*/}
+        {/*      key={Math.random().toString()}*/}
+        {/*      menuItem={item}*/}
+        {/*      addMenuItem={()=>addMenuItem(item)}*/}
+        {/*    />*/}
+        {/*  ))}*/}
+        {/*</div>*/}
       </div>
     </>
   )
