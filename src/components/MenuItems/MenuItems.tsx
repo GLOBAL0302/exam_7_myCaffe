@@ -1,4 +1,4 @@
-import MenuItem from '../menuItem/menuItem.tsx';
+import MenuItem from './menuItem/menuItem.tsx';
 import React from 'react';
 import {menuItemState} from '../../types.ts';
 

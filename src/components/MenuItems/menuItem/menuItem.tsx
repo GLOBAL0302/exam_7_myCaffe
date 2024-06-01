@@ -1,4 +1,4 @@
-import {menuItemState} from '../../types.ts';
+import {menuItemState} from '../../../types.ts';
 import React from 'react';
 import "./menuItem.css"
 

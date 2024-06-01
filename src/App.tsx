@@ -14,7 +14,7 @@ function App() {
     {title:coffee, count: 0},
     {title:tea, count: 0},
     {title:cola, count: 0}
-  ])
+  ]);
 
 
   const addMenuItem=(value:menuItemState)=>{
@@ -26,7 +26,7 @@ function App() {
             count:item.count + 1
           }
         }
-        return item
+        return item;
       })
     })
   }
@@ -40,7 +40,7 @@ function App() {
             count: item.count > 0 ? item.count - 1: 0
           }
         }
-        return  item
+        return  item;
       })
     })
   }
@@ -54,15 +54,6 @@ function App() {
         <MenuItems
           menuItems={menuItems}
           addMenuItem={addMenuItem}/>
-        {/*<div className="addItemmSection d-flex w-50 flex-wrap">*/}
-        {/*  {menuItems.map(item=>(*/}
-        {/*    <MenuItem*/}
-        {/*      key={Math.random().toString()}*/}
-        {/*      menuItem={item}*/}
-        {/*      addMenuItem={()=>addMenuItem(item)}*/}
-        {/*    />*/}
-        {/*  ))}*/}
-        {/*</div>*/}
       </div>
     </>
   )
