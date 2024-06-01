@@ -31,10 +31,26 @@ function App() {
     })
   }
 
+  const reduceMenuItem = (value:menuItemState)=>{
+    setMenuItems((prevState)=>{
+      return prevState.map(item=>{
+        if(item.title.name === value.title.name){
+          return{
+            ...item,
+            count: item.count > 0 ? item.count - 1: 0
+          }
+        }
+        return  item
+      })
+    })
+  }
+
   return (
     <>
       <div className="wrapper d-flex">
-        <OrderDetails menuItems={menuItems}/>
+        <OrderDetails
+          menuItems={menuItems}
+          reduceMenuItem={reduceMenuItem}/>
         <div className="addItemmSection d-flex w-50 flex-wrap">
           {menuItems.map(item=>(
             <MenuItem
