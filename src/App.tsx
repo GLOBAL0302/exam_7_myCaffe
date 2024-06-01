@@ -3,7 +3,7 @@ import {hamburger, cheeseBurger, fries, coffee, tea, cola} from './constantItems
 import React from 'react';
 import {menuItemState} from './types.ts';
 import MenuItem from './components/menuItem/menuItem.tsx';
-import menuItem from './components/menuItem/menuItem.tsx';
+import OrderDetails from './components/OrderDetails/OrderDetails.tsx';
 
 
 function App() {
@@ -17,16 +17,31 @@ function App() {
   ])
 
 
+  const addMenuItem=(value:menuItemState)=>{
+    setMenuItems((prevState)=>{
+      return prevState.map((item)=>{
+        if(item.title.name === value.title.name){
+          return {
+            ...item,
+            count:item.count + 1
+          }
+        }
+        return item
+      })
+    })
+  }
 
   return (
     <>
       <div className="wrapper d-flex">
-        <div className="orderDetails w-50 border-5 border">
-          <h1>here order details</h1>
-        </div>
-        <div className="addItemmSection d-flex w-50 flex-wrap" >
+        <OrderDetails menuItems={menuItems}/>
+        <div className="addItemmSection d-flex w-50 flex-wrap">
           {menuItems.map(item=>(
-            <MenuItem menuItem={item}/>
+            <MenuItem
+              key={Math.random().toString()}
+              menuItem={item}
+              addMenuItem={()=>addMenuItem(item)}
+            />
           ))}
         </div>
       </div>
